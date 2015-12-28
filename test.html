@@ -1,0 +1,52 @@
+<!--https://developer.mozilla.org/zh-CN/docs/Web/API/Geolocation/Using_geolocation-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script>
+        function test() {
+            var o = document.getElementById('out');
+            var l = document.images.length;
+            for (var i = 0; i < l; i++) {
+                document.images[i].style.display = 'none';
+            }
+            console.log(l);
+            console.log(o.innerHTML);
+        }
+
+        function $(id) {
+            var o = document.getElementById(id);
+            console.log(o.innerHTML);
+        }
+
+        var s = test;
+        // window.open("http://js.hupu.com/test.html");
+        // window.close();
+
+
+        window.onload = s;
+
+
+    </script>
+    <style>
+        img {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 id="out" onclick="$('out')">test</h1>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+    <image src="http://content.nike.com/content/dam/one-nike/en_us/Jordan/SU14/Jordan-Campaign/AJXX9/AJXX9-8-15-all-assets/CDP-Jordan-AJXX9-081514-FST06-1600x900-img02.jpg.transform/full-screen/image.jpg"></image>
+</div>
+
+</body>
+</html>
+
