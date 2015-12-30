@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://3.hupu.com/frontSource/Basketball3V3/jsFrame/jquery.min.js"></script>
+</head>
+<body>
+<div style="width: 100px;height: 100px;background: red"></div>
+<div style="width: 100px;height: 100px;background: green"></div>
+<div style="width: 100px;height: 100px;background: blue"></div>
+<div id="test1" action="456" style="width: 100px;height: 100px;background: blue"></div>
+<img src="/clock-icon.png" width="128" height="128" />
+</body>
+<script>
+    var div = $("div");
+    div.css("background-color", "yellow").show("slow");
+    div.click(function () {
+        $(this).slideUp("slow");
+    });
+    console.log(div);
+</script>
+<script>
+    $('img').fadeIn();
+    $('img').fadeOut("slow",function(){$(this).text("fade away")});
+    $('img').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).slideUp().slideDown();
+    var a = $('#test1').attr("action");
+    $('#test1').data("x",99);
+    var c=$('#test1').data("x");
+    console.log(c);
+    var b = $('img').attr("width");
+    $('img').click(function(){
+        $.event.trigger("aaaaaaaa");
+        $(this).remove();
+    });
+    console.log(a);
+    console.log(b);
+    console.log(123);
+</script>
+</html>
