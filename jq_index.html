@@ -10,10 +10,13 @@
 <div style="width: 100px;height: 100px;background: green"></div>
 <div style="width: 100px;height: 100px;background: blue"></div>
 <div id="test1" action="456" style="width: 100px;height: 100px;background: blue"></div>
-<img src="/clock-icon.png" width="128" height="128" />
+<img src="/clock-icon.png" width="128" height="128"/>
+<canvas id="square" width="10" height="10"></canvas>
+<canvas id="circle" width="10" height="10"></canvas>
 </body>
 <script>
     var div = $("div");
+    div.load("/");
     div.css("background-color", "yellow").show("slow");
     div.click(function () {
         $(this).slideUp("slow");
@@ -21,15 +24,32 @@
     console.log(div);
 </script>
 <script>
+    var canvas = document.getElementById("square");
+    var context = canvas.getContext("2d");
+    context.fillStyle = "#f00";
+    context.fillRect(0, 0, 10, 10);
+    canvas = document.getElementById("circle");
+    context = canvas.getContext("2d");
+    context.beginPath();
+    context.arc(5, 5, 5, 0, 2 * Math.PI, true);
+    context.fillStyle = "#00f";
+    context.fill();
+
+    var t = $.get('index.html');
+    console.log(t);
+    var arr = {x: 1, y: 2};
+    console.log(jQuery.param(arr));
     $('img').fadeIn();
-    $('img').fadeOut("slow",function(){$(this).text("fade away")});
+    $('img').fadeOut("slow", function () {
+        $(this).text("fade away")
+    });
     $('img').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).slideUp().slideDown();
     var a = $('#test1').attr("action");
-    $('#test1').data("x",99);
-    var c=$('#test1').data("x");
+    $('#test1').data("x", 99);
+    var c = $('#test1').data("x");
     console.log(c);
     var b = $('img').attr("width");
-    $('img').click(function(){
+    $('img').click(function () {
         $.event.trigger("aaaaaaaa");
         $(this).remove();
     });

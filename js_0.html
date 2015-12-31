@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recursion</title>
+</head>
+<body>
+<script>
+    var n;
+    function fact(n) {
+        if (n < 1) {
+            return 1;
+        } else {
+            return n*fact(n-1);
+        }
+    }
+    console.log(fact(4));
+</script>
+</body>
+</html>

@@ -6,6 +6,8 @@ window.onload =
     function () {
         var clock = document.getElementById("clock"),
             icon = new Image();
+        var s_data=['1','2','3'];
+        console.log(JSON.stringify(s_data));
         icon.src = "clock-icon.png";
         function displayTime() {
             var now = new Date(),
