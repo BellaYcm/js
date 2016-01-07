@@ -6,16 +6,32 @@
     <meta name="keywords" content="迭代"/>
 </head>
 <body>
+<!--递归-->
 <script>
-    var n;
-    function fact(n) {
-        if (n < 1) {
+var n;
+function fact(n) {
+if (n < 1) {
+return 1;
+} else {
+return n*fact(n-1);
+}
+}
+console.log(fact(4));
+</script>
+<!--尾递归-->
+<script>
+    var c, d = 1;
+    function facttail(c, d) {
+        if (c < 1) {
             return 1;
-        } else {
-            return n*fact(n-1);
+        } else if (c == 1) {
+            return d;
+        }
+        else {
+            return facttail(c - 1, c * d);
         }
     }
-    console.log(fact(4));
+    console.log(facttail(5, d));
 </script>
 </body>
 </html>
