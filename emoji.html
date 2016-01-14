@@ -1,0 +1,42 @@
+<!--获取emoji实体   http://blog.csdn.net/binjly/article/details/47321043-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="emoji" value="">
+<input type="submit" id="submit">
+<script>
+    var i, e, s;
+    e = document.getElementById("emoji");
+    s = document.getElementById("submit");
+    s.onclick = function () {
+        console.log(utf16toEntities(e.value));
+    }
+    i = parseInt("1F600", 16);
+    console.log(i);
+    function utf16toEntities(str) {                         //在js里，emoji表情也是用ucs-2编码的啊，只不过变成了用两个字符来表示。
+        var patt = /[\ud800-\udbff][\udc00-\udfff]/g;    // 检测utf16字符正则 emoji是UTF-16编码  符合UTF-16 拆分成两个ucs-2的2字节字符
+        str = str.replace(patt, function (char) {
+            var H, L, code;
+            if (char.length === 2) {                        // emoji长度为2
+                H = char.charCodeAt(0);                     // 取出高位  charCodeAt() 方法可返回指定位置的字符的 Unicode 编码
+                L = char.charCodeAt(1);                     // 取出低位
+                console.log(123);
+                console.log(0xD800);
+                console.log(H);
+                code = (H - 0xD800) * 0x400 + 0x10000 + L - 0xDC00; // 转换算法  把ucs-2转utf-16
+                return "&#" + code + ";";
+            } else {
+                return char;
+            }
+        });
+        return str;
+    }
+
+</script>
+
+</body>
+</html>
